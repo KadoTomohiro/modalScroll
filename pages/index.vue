@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <NuxtLink :to="'vScroll'">v-scroll-rock</NuxtLink>
-    <!--    <NuxtLink>Custom</NuxtLink>-->
+    <NuxtLink :to="'image'">image page</NuxtLink>
+    <NuxtLink :to="vScroll">v-scroll-lock</NuxtLink>
   </div>
 </template>
 

@@ -7,8 +7,20 @@
       </div>
     </div>
     <div class="popup">
-      <header>overflow: scroll-y</header>
+      <header>overflow: auto</header>
+      <div class="contents overflow-auto" v-scroll-lock="open">
+        <slot></slot>
+      </div>
+    </div>
+    <div class="popup">
+      <header>overflow-y: scroll</header>
       <div class="contents overflow-y" v-scroll-lock="open">
+        <slot></slot>
+      </div>
+    </div>
+    <div class="popup">
+      <header>overflow-y: auto</header>
+      <div class="contents overflow-y-auto" v-scroll-lock="open">
         <slot></slot>
       </div>
     </div>
@@ -49,6 +61,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 .popup {
   width: 40vw;
@@ -57,14 +70,22 @@ header {
   background-color: #fff;
 }
 .contents {
-  height: 50vh;
+  height: 30vh;
 }
 
 .overflow {
   overflow: scroll;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .overflow-y {
   overflow-y: scroll;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 </style>

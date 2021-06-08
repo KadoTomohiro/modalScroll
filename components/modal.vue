@@ -1,7 +1,16 @@
 <template>
   <div v-if="open" class="overlay" @click="close">
-    <div class="contents" v-scroll-lock="open">
-      <slot></slot>
+    <div class="popup">
+      <header>overflow: scroll</header>
+      <div class="contents overflow" v-scroll-lock="open">
+        <slot></slot>
+      </div>
+    </div>
+    <div class="popup">
+      <header>overflow: scroll-y</header>
+      <div class="contents overflow-y" v-scroll-lock="open">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +34,11 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+header {
+  font-size: 2rem;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.2em;
+}
 .overlay {
   width: 100vw;
   height: 100vh;
@@ -33,15 +47,24 @@ export default Vue.extend({
   top: 0;
   left: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
-.contents {
-  width: 50vw;
-  height: 50vh;
+.popup {
+  width: 40vw;
   border-radius: 20px;
   padding: 20px;
   background-color: #fff;
+}
+.contents {
+  height: 50vh;
+}
+
+.overflow {
+  overflow: scroll;
+}
+
+.overflow-y {
   overflow-y: scroll;
 }
 </style>

@@ -50,6 +50,8 @@ export default Vue.extend({
 <style scoped>
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 li {
   border: 1px solid #aaa;

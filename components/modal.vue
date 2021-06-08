@@ -42,6 +42,6 @@ export default Vue.extend({
   border-radius: 20px;
   padding: 20px;
   background-color: #fff;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 </style>

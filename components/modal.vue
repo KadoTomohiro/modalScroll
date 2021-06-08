@@ -1,6 +1,6 @@
 <template>
   <div v-if="open" class="overlay" @click="close">
-    <div class="contents">
+    <div class="contents" v-scroll-lock="open">
       <slot></slot>
     </div>
   </div>
